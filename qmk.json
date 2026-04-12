@@ -880,6 +880,7 @@
                 "HLC_NONE": "1",
                 "TARGET": "splitkb_aurora_helix_rev1_vial_hlc"
             }
-        ]
+        ],
+        ["splitkb/halcyon/elora/rev2", "meow"]
     ]
 }
