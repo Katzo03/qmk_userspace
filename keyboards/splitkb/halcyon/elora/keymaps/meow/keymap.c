@@ -8,6 +8,7 @@
 #include "keymap_us.h"
 #include "quantum.h"
 #include "config.h"
+#include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
 
 enum layers {
@@ -101,11 +102,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_GALLIUM] = LAYOUT(
-      KC_ESC, _______, _______, _______, _______, _______,                                      _______, _______, _______, _______, _______, KC_ESC,
+      KC_ESC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ESC,
       KC_TAB, KC_B,    KC_L,    KC_D,    KC_W,    KC_V,                                         KC_J,    KC_F,    KC_O,    KC_U,    KC_COMM, KC_BSPC,
       CTL_ESC, KC_N,    KC_R,    KC_T,    KC_S,    KC_G,                                         KC_Y,    KC_H,    KC_A,    KC_E,    KC_I,    CTL_QUOT,
-      KC_LSFT, KC_X,    KC_Q,    KC_M,    KC_C,    KC_Z,    _______, KC_CAPS, _______, _______,  KC_K,    KC_P,    KC_QUOT, KC_SCLN, KC_DOT,  KC_RSFT,
-                                _______, _______, HT_NAV, KC_ENT, HT_NUM, HT_FUNCTION, KC_SPC,  HT_SYM, _______, HT_ADJUST
+      KC_LSFT, KC_X,    KC_Q,    KC_M,    KC_C,    KC_Z,    XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX,  KC_K,    KC_P,    KC_QUOT, KC_SCLN, KC_DOT,  KC_RSFT,
+                                XXXXXXX, XXXXXXX, HT_NAV, KC_ENT, HT_NUM, HT_FUNCTION, KC_SPC,  HT_SYM, XXXXXXX, HT_ADJUST
     ),
 
 /*
@@ -128,8 +129,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC  , KC_1 ,  KC_2   ,  KC_3  ,   KC_4 ,   KC_5 ,                                        KC_6 ,  KC_7 ,  KC_8 ,   KC_9 ,  KC_0 , KC_ESC ,
      KC_TAB  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
      CTL_ESC , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN,CTL_QUOT,
-     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , _______,KC_CAPS,     _______  , _______, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                                _______, _______, HT_NAV, KC_ENT, HT_NUM, HT_FUNCTION, KC_SPC,  HT_SYM, _______, HT_ADJUST
+     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , XXXXXXX,KC_CAPS,     XXXXXXX  , XXXXXXX, KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                XXXXXXX, XXXXXXX, HT_NAV, KC_ENT, HT_NUM, HT_FUNCTION, KC_SPC,  HT_SYM, XXXXXXX, HT_ADJUST
     ),
 
 /*
@@ -150,9 +151,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_NAV] = LAYOUT(
       _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, QWERTY, GALLIUM,
-      _______, _______, _______, _______, _______, _______,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
-      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
-      _______, _______, _______, _______, _______, _______, _______, KC_SCRL, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
+      _______, LCTL(KC_Z), LCTL(KC_X) , LCTL(KC_C), LCTL(KC_V), _______, _______, KC_SCRL, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -174,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_SYM] = LAYOUT(
       _______, _______, _______, _______, _______, _______ ,                                      _______, _______, _______, _______, _______, _______,
-      _______,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                                      KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_COLN, _______,
+      _______,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                                      KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_COLN, XXXXXXX,
       _______ , KC_EQL,  KC_MINS, KC_UNDS, KC_ASTR, KC_SLSH,                                      KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_SCLN, KC_QUES,
       _______ , KC_AMPR, KC_PIPE, KC_CIRC, KC_PLUS, KC_BSLS, _______, _______, _______, _______,  KC_QUOT, KC_DQUO, KC_COMM, KC_DOT,  KC_GRV , KC_TILD,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
@@ -197,10 +198,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_FUNCTION] = LAYOUT(
-      _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
-      _______,  KC_F9 ,  KC_F10,  KC_F11,  KC_F12, _______,                                     _______, _______, _______, _______, _______, _______,
-      _______,  KC_F5 ,  KC_F6 ,  KC_F7 ,  KC_F8 , _______,                                     _______, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, _______,
-      _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+      _______,  KC_F9 ,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,                                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+      _______,  KC_F5 ,  KC_F6 ,  KC_F7 ,  KC_F8 , XXXXXXX,                                     XXXXXXX, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, _______,
+      _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 , XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
@@ -221,10 +222,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_ADJUST] = LAYOUT(
-        QK_BOOT, EE_CLR , _______, _______, _______, _______,               _______, _______, _______, _______, _______, QK_BOOT,
-        _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,               _______, _______, _______, _______, _______, _______,
-        _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______,               RM_TOGG, RM_SATU, RM_HUEU, RM_VALU, RM_NEXT, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RM_SATD, RM_HUED, RM_VALD, RM_PREV, _______,
+        QK_BOOT, EE_CLR , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,
+        XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,               XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,               RM_TOGG, RM_SATU, RM_HUEU, RM_VALU, RM_NEXT, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, RM_SATD, RM_HUED, RM_VALD, RM_PREV, XXXXXXX,
                                    _______, _______, _______, _______,      _______, _______, _______, _______, _______, _______
       ),
 
@@ -275,6 +276,7 @@ void holdmo_tabtog(keyrecord_t *record, int layer, uint16_t layer_timer[],bool k
             if (i != index) {
                 key_state[i] = false;
                 layer_timer[i] = 0;
+                layer_off(MY_TT_START + i);
             }
         }
 
